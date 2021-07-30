@@ -16,6 +16,8 @@ namespace Project1_WellnessApp
 {
     public class Startup
     {
+        string connection = "Server=.\\SQLExpress;Database=DatabaseDb;Trusted_Connection=True;ConnectRetryCount=0;";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -45,6 +47,7 @@ namespace Project1_WellnessApp
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddDbContext<UserProfileDbContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
