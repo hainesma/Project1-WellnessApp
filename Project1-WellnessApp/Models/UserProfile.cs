@@ -17,5 +17,10 @@ namespace Project1_WellnessApp.Context
         public DateTime BirthDate { get; set; }
         public virtual ICollection<FoodRegime> FoodRegimes { get; set; }
         public virtual ICollection<PhilosophySchool> PhilosophySchools { get; set; }
+       
+        [ForeignKey("ApplicationUserFK")]
+        
+        public ApplicationUser applicationUser { get; set; }
+        //public string ApplicationUserFK { get; set; }
     }
 }

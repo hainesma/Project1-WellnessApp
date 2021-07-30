@@ -19,7 +19,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.15" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.15" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.15" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.15" />
@@ -30,6 +30,21 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210730190712_tryAgain.cs" />
+    <Compile Remove="Migrations\20210730190712_tryAgain.Designer.cs" />
+    <Compile Remove="Migrations\20210730192516_debugging.cs" />
+    <Compile Remove="Migrations\20210730192516_debugging.Designer.cs" />
+    <Compile Remove="Migrations\20210730193610_fresh.cs" />
+    <Compile Remove="Migrations\20210730193610_fresh.Designer.cs" />
+    <Compile Remove="Migrations\20210730194017_finalOne.cs" />
+    <Compile Remove="Migrations\20210730194017_finalOne.Designer.cs" />
+    <Compile Remove="Migrations\20210730203437_newnew.cs" />
+    <Compile Remove="Migrations\20210730203437_newnew.Designer.cs" />
+    <Compile Remove="Migrations\20210730204730_newnew2.cs" />
+    <Compile Remove="Migrations\20210730204730_newnew2.Designer.cs" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
