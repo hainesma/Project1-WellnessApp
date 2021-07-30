@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Project1_WellnessApp.Context;
 using Project1_WellnessApp.Data;
 using Project1_WellnessApp.Models;
 
@@ -16,7 +17,7 @@ namespace Project1_WellnessApp
 {
     public class Startup
     {
-        string connection = "Server=.\\SQLExpress;Database=DatabaseDb;Trusted_Connection=True;ConnectRetryCount=0;";
+        string connection = "Server=.\\SQLExpress;Database=WellnessDb;Trusted_Connection=True;ConnectRetryCount=0;";
 
         public Startup(IConfiguration configuration)
         {
@@ -47,7 +48,7 @@ namespace Project1_WellnessApp
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-            services.AddDbContext<UserProfileDbContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<WellnessDbContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
